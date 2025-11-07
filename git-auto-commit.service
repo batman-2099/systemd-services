@@ -1,0 +1,12 @@
+[Unit]
+Description=Auto commit docker-compose changes
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/git-auto-commit.sh
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
